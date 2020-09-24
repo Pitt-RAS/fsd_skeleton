@@ -60,16 +60,25 @@ Look at`fsd_aliases` to see full list, or add more custom aliases.
 - - - -
 
 # Setting up the Workspace
+**0 Install prerequisites:**
+
+```
+Install a full version of ros melodic and rosdep: http://wiki.ros.org/melodic/Installation/Ubuntu
+sudo apt install python-catkin-tools
+sudo apt install checkinstall
+sudo apt-get install ros-melodic-rqt-multiplot
+
+```
 **1 Clone the repository:**
 
 ```
 cd ~
-git clone git@github.com:AMZ-Driverless/fsd_skeleton.git
+git clone https://github.com/Pitt-RAS/fsd_skeleton
 ```
 **2 Install dependencies**
 ```
 cd ~/fsd_skeleton
-./update_dependencies.sh
+./update_dependencies.sh -f
 ```
 
 **3 Build workspace**
@@ -92,17 +101,15 @@ source fsd_environment.sh
 
 **5 Test setup**
 ```
-roslaunch fsd_common_meta trackdrive.launch
+roslaunch fssim_interface fssim.launch
 ```
 in new terminal
 ```
-rqt_graph
+roslaunch fsd_common_meta trackdrive.launch
 ```
-You should see all the nodes int the pipeline running
+You should see the car start moving after everything is loaded.
 - - - -
 
-# Run the workspace with FSSIM
-* see https://github.com/AMZ-Driverless/fssim#combine-it-with-simple-fsd-skeleton-framework-and-drive-a-lap
 
 # Conventions
 - - - -
