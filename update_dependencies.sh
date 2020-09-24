@@ -194,6 +194,7 @@ if [ ! -z $FSSIM ]; then
     printf "Updating FSSIM dependencies..."
     cd src/fssim/
     git pull
+    git checkout melodic-devel
     ./update_dependencies.sh
     git lfs pull
     cd ../../
